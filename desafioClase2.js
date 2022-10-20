@@ -7,7 +7,7 @@ class Usuario {
     }
 
     getFullname(){
-        return this.nombre;
+        return `${this.nombre}  ${this.apellido}`;
     }
 
     addMascota(mascota){
