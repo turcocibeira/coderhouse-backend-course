@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Name",
+    "price": "price",
+    "thumbnail": "url random",
+    "id": 1
+  },
+  {
+    "title": "Name",
+    "price": "price",
+    "thumbnail": "url random",
+    "id": 3
+  },
+  {
+    "title": "Name",
+    "price": "price",
+    "thumbnail": "url random",
+    "id": 3
+  },
+  {
+    "title": "Name",
+    "price": "price",
+    "thumbnail": "url random",
+    "id": 4
+  },
+  {
+    "title": "Name",
+    "price": "price",
+    "thumbnail": "url random",
+    "id": 5
+  }
+]
