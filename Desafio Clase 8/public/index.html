@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Super Simple Form</h1>
+    <div style="display:flex; align-items:center">
+        <h3>GET all products</h3>
+        <form action="/api/productos" method="GET" >
+            <input type="submit" value="Get all products" style="margin-left:10px">
+        </form>
+    </div>
+    <div style="display:flex; align-items:center">
+        <h3>Add a new product</h3>        
+        <form action="/api/productos" method="POST">
+            <label for="formTitle">Title:</label>
+            <input type="text" name="title" id="formTitle">
+            <label for="formPrice">Price:</label>
+            <input type="number" name="price" id="formPrice">
+            <label for="formThumb">Thumbnail:</label>
+            <input type="text" name="thumbnail" id="formThumb">
+            <input type="submit" name="" id="">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Name",
+    "price": "price",
+    "thumbnail": "url random",
+    "id": 1
+  },
+  {
+    "title": "Gonzalo",
+    "price": "2500",
+    "thumbnail": "URLabcdefg",
+    "id": 3
+  },
+  {
+    "title": "ImATitle",
+    "price": "25",
+    "thumbnail": "URL",
+    "id": 4
+  },
+  {
+    "title": "ImATitle",
+    "thumbnail": "URL",
+    "id": 6
+  },
+  {
+    "title": "Gonzalo",
+    "price": "2500",
+    "thumbnail": "URLabcdefg",
+    "id": 7
+  },
+  {
+    "title": "ImATitle",
+    "thumbnail": "URL",
+    "id": 8
+  },
+  {
+    "title": "ImATitle",
+    "price": "25",
+    "thumbnail": "URL",
+    "id": 9
+  },
+  {
+    "title": "Natalia",
+    "price": "300",
+    "thumbnail": "NataliaNatalia",
+    "id": 10
+  }
+]
