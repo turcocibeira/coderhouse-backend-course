@@ -1,5 +1,6 @@
 // Require fs
-const fs = require("fs");
+//const fs = require("fs");
+import fs from "fs";
 
 // Test Object
 const testObject = {
@@ -84,26 +85,49 @@ class Contenedor {
             console.log("There was an error deleting the contents of the file.")
         }
     };
-}
+
+    async updateById(title, price, thumbnail, uid) {
+        try {
+            const file = await fs.promises.readFile(`./${this.fileName}.txt`, "utf-8");
+            let fileParse = JSON.parse(file);
+
+            const index = fileParse.findIndex(obj => {return obj.id === uid});
+
+            fileParse[index].title = title;
+            fileParse[index].price = price;
+            fileParse[index].thumbnail = thumbnail;
+
+            await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(fileParse,null,2))
+            return uid;
+        }
+        catch (err) {
+            console.log("There was an error")
+        }
+    }
+};
+
+export default Contenedor;
 
 
 // Instantiate new Contenedor
-const cont1 = new Contenedor("productos");
+//const cont1 = new Contenedor("productos");
+
+//cont1.updateVal("Gonzalo", 200, "t.cib", 2)
 
 // Test save method
-cont1.save(testObject)
-    .then((data) =>console.log("Successfully added new item with id: "+data));
+//cont1.save(testObject)
+//    .then((data) =>console.log("Successfully added new item with id: "+data));
 
 // Test getById method
-cont1.getById(2)
-    .then((data) =>console.log(data));
+//cont1.getById(2)
+//    .then((data) =>console.log(data));
 
 // Test getAll method
-cont1.getAll()
-    .then((data) =>console.log(data));
+//cont1.getAll()
+//    .then((data) =>console.log(data));
 
 // Test deleteById method
-cont1.deleteById(2)
+//cont1.deleteById(2)
 
 // Test getAll method -- llamar a este metodo hace que siempre quede sólo 1 item en el archivo productos.txt, por eso está comentado
 //cont1.deleteAll()

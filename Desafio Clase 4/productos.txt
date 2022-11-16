@@ -1,15 +1,15 @@
 [
   {
-    "title": "Name",
-    "price": "price",
-    "thumbnail": "url random",
+    "title": "Gonzalo",
+    "price": 200,
+    "thumbnail": "t.cib",
     "id": 1
   },
   {
-    "title": "Name",
-    "price": "price",
-    "thumbnail": "url random",
-    "id": 3
+    "title": "Gonzalo",
+    "price": 200,
+    "thumbnail": "t.cib",
+    "id": 2
   },
   {
     "title": "Name",
@@ -18,9 +18,9 @@
     "id": 3
   },
   {
-    "title": "Name",
-    "price": "price",
-    "thumbnail": "url random",
+    "title": "Gonzalo",
+    "price": 200,
+    "thumbnail": "t.cib",
     "id": 4
   },
   {
