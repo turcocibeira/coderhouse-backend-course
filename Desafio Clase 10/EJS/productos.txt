@@ -1,0 +1,20 @@
+[
+  {
+    "title": "SD Card",
+    "price": "100",
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/random-set-1/364/Asset_77-256.png",
+    "id": 1
+  },
+  {
+    "title": "Mystery Box",
+    "price": "2500",
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/random-set-1/433/Asset_95-256.png",
+    "id": 2
+  },
+  {
+    "title": "Paint Roller",
+    "price": "27",
+    "thumbnail": "https://cdn.icon-icons.com/icons2/3528/PNG/512/paint_roller_tool_icon_221345.png",
+    "id": 3
+  }
+]

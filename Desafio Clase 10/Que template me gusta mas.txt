@@ -1,0 +1,7 @@
+Sinceramente los 3 me parecen horribles.
+
+Handlebars es más dificil de configurar que los otros y hay que aprender una sintaxis nueva.
+De PUG no me gusta que los tags se separen por el nivel de indentación.
+EJS es casi JS pero es un poco confuso el uso de los tags <% %>.
+
+No entiendo por que alguien usaría alguno de estos en lugar de un framework de FE.
