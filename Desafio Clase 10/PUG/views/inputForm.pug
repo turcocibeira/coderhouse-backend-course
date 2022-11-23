@@ -1,0 +1,15 @@
+extends main.pug 
+
+block form
+    h1 Add New Product - PUG
+    div(style="display:flex; flex-direction:column; align-items:flex-start; margin-left: 30px;")
+        form(action="/api/productos", method="POST", style="display:flex; flex-direction:column")
+            label(for="formTitle") Title:
+            input(type="text" name="title" id="formTitle")
+            label(for="formPrice") Price:
+            input(type="number" name="price" id="formPrice")
+            label(for="formThumb") Thumbnail:
+            input(type="text" name="thumbnail" id="formThumb")
+            input(type="submit" name="" id="")
+        form(action="/api/productos" method="GET")
+            input(type="submit" name="" value="See all products" id="")

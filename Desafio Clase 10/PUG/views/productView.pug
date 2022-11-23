@@ -1,0 +1,15 @@
+extends main.pug
+
+block productView
+    h1 See all products - PUG
+    div(style="display:flex; margin-left:20px; margin-bottom:20px")
+        if hasAny 
+            each prod in prods
+                div(style="display:flex; flex-direction:column; align-items:center; margin-left:50px; padding:5px; border: 3px solid #000000; width: 150px; height:200px")
+                    h2=prod.title
+                    img(src=prod.thumbnail alt="" width="100")
+                    h3 Price: #{prod.price}
+        else 
+            h2 There are no products to show
+    form(action="/" method="GET")
+        input(type="submit" name="" value="Add new product" id="")
