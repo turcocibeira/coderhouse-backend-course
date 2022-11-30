@@ -1,0 +1,23 @@
+<h1>Add New Product - Handlebars</h1>
+<div style="display:flex; flex-direction:column; align-items:flex-start; margin-left: 30px;">     
+    <form id="prodForm" style="display:flex; flex-direction:column">
+        <label for="formTitle">Title:</label>
+        <input id="prodName" type="text" name="title" id="formTitle">
+        <label for="formPrice">Price:</label>
+        <input id="prodPrice" type="number" name="price" id="formPrice">
+        <label for="formThumb">Thumbnail:</label>
+        <input id="prodThumb" type="text" name="thumbnail" id="formThumb">
+        <input type="submit" name="" id="">
+    </form>
+</div>
+<h2>Product list</h2>
+<div id="productList"></div>
+<h2>Chat </h2>
+<form id="chatForm">
+    <input id="mailIn" type="text" placeholder="email">
+    <input id="msgIn" type="text" placeholder="message">
+    <input type="submit" value="send">
+</form>
+<div id="chatPool"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../client.socket.js"></script>

@@ -1,0 +1,17 @@
+<h1>See all products - Handlebars</h1>
+<div style="display:flex; margin-left:20px; margin-bottom:20px">
+    {{#if hasAny}}
+        {{#each prods}}
+            <div style="display:flex; flex-direction:column; align-items:center; margin-left:50px; padding:5px; border: 3px solid #000000; width: 150px; height:200px">
+                <h2>{{this.title}}</h2>
+                <img src="{{this.thumbnail}}" alt="" width="100">
+                <h3>Price: {{this.price}}</h3>
+            </div>
+        {{/each}}
+    {{else}}
+        <h2>There are no products to show</h2>
+    {{/if}}
+</div>
+<form action="/">
+    <input type="submit" name="" id="" value="Add new product">
+</form>
