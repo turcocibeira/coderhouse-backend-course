@@ -26,7 +26,7 @@ class PersistanceHandler {
             return id;
         }
         catch (err){
-            console.log("There was an error saving the file.")
+            return {msg: `There was an error saving the data.`}
         }
 
         
@@ -41,11 +41,11 @@ class PersistanceHandler {
             if (item) {
                 return item
             } else {
-                return `No item with id ${id} was found`
+                return null
             }
         }
         catch (err) {
-            return null;
+            return {msg: `There was an error reading the data.`}
         }
     };
 
@@ -55,7 +55,7 @@ class PersistanceHandler {
             return JSON.parse(file)
         }
         catch(err){
-            console.log("There was an error reading the file.")
+            return {msg: `There was an error reading the data.`}
         }
     };
 
@@ -75,7 +75,7 @@ class PersistanceHandler {
             }
         }
         catch (err) {
-            console.log("There was an error deleting the object with id: "+id)
+            return {msg: `There was an error deleting item with ID ${id}`}
         }
     };
 
@@ -84,28 +84,76 @@ class PersistanceHandler {
             await fs.promises.writeFile(`./${this.fileName}.txt`, "[]")
         }
         catch (err) {
-            console.log("There was an error deleting the contents of the file.")
+            return {msg: `There was an error deleting all items.`};
         }
     };
 
-    async updateById(title, price, thumbnail, uid) {
+    async updateById(id, body) {
+        let idInt = parseInt(id);
+
         try {
             const file = await fs.promises.readFile(`./${this.fileName}.txt`, "utf-8");
             let fileParse = JSON.parse(file);
 
-            const index = fileParse.findIndex(obj => {return obj.id === uid});
+            const index = fileParse.findIndex(obj => {return obj.id === idInt});
 
-            fileParse[index].title = title;
-            fileParse[index].price = price;
-            fileParse[index].thumbnail = thumbnail;
+            for (let key of Object.keys(body)){
+                fileParse[index][key] = body[key]
+            };
+
+            console.log(fileParse)
 
             await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(fileParse,null,2))
-            return uid;
+            return {msg: `Item with ID ${idInt} has been updated successfully.`};
         }
         catch (err) {
-            console.log("There was an error")
+            return {msg: `There was an error updating item with ID ${idInt}, please check if that ID is valid.`};
         }
-    }
+    };
+
+// Cart specific functions
+
+    async addProdToCart(prod, cartId){
+        const cartInt = parseInt(cartId);
+
+        try {
+            let cart = await this.getAll();
+            cart[cartInt-1].products.push(prod);
+            await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(cart,null,2))
+            return {msg: `Item with ID ${prod.id} has been added to cart with ID ${cartId} successfully.`};
+
+
+        }
+        catch (err) {
+            return {msg: `There was an error adding item with ID ${prod.id} to cart with ID ${cartId}, please check if that ID is valid.`};
+        }
+    };
+
+    async deleteProdInCart(prodId, cartId) {
+        const prodInt = parseInt(prodId);
+        const cartInt = parseInt(cartId);
+
+        const file = await fs.promises.readFile(`./${this.fileName}.txt`, "utf-8");
+        let fileParse = JSON.parse(file);
+
+        let newProdList = fileParse[cartInt-1].products.filter((i) => {
+            return i.id !== prodInt
+        });
+
+        fileParse[cartInt-1].products = newProdList;
+
+        try {
+            await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(fileParse,null,2));
+            if (prodInt && cartInt) {
+                return {msg: `Item with ID ${prodInt} from cart with ID ${cartInt} has been deleted successfully.`}
+            } else {
+                return {msg: `Please check wether Cart and/or Product IDs are correct`}
+            }
+        }
+        catch (err) {
+            return {msg: `There was an error deleting item with ID ${prodInt} from cart with ID ${cartInt}, please check if that ID is valid.`};
+        }
+    };
 };
 
 export default PersistanceHandler;

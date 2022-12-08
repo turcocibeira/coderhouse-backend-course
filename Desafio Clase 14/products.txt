@@ -3,10 +3,10 @@
     "timestamp": "",
     "name": "SD Card",
     "description": "A 32GB SD card",
-    "code": "SD0001",
+    "code": "SD555",
     "picURL": "https://cdn2.iconfinder.com/data/icons/random-set-1/364/Asset_77-256.png",
-    "price": "100",
-    "stock": 32,
+    "price": "500",
+    "stock": "25",
     "id": 1
   },
   {

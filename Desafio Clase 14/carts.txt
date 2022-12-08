@@ -37,12 +37,34 @@
   },
   {
     "timestamp": 1670435480938,
-    "products": [],
+    "products": [
+      {
+        "timestamp": "",
+        "name": "Paint Roller",
+        "description": "A cheap paint roller, perfect for DIY projects.",
+        "code": "PR0001",
+        "picURL": "https://cdn.icon-icons.com/icons2/3528/PNG/512/paint_roller_tool_icon_221345.png",
+        "price": "5",
+        "stock": 124,
+        "id": 3
+      }
+    ],
     "id": 2
   },
   {
     "timestamp": 1670435481478,
-    "products": [],
+    "products": [
+      {
+        "timestamp": "",
+        "name": "Paint Roller",
+        "description": "A cheap paint roller, perfect for DIY projects.",
+        "code": "PR0001",
+        "picURL": "https://cdn.icon-icons.com/icons2/3528/PNG/512/paint_roller_tool_icon_221345.png",
+        "price": "5",
+        "stock": 124,
+        "id": 3
+      }
+    ],
     "id": 3
   }
 ]

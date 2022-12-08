@@ -8,16 +8,6 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-let admin = true;
-
-const isAdmin = (req, res, next) => {
-    if (admin){
-        next();
-    } else {
-        res.json({error:-1, desc: `Admin right are needed for route ${req.path} method ${req.method}`})
-    }
-};
-
 app.use(json());
 app.use(urlencoded({extended: true}));
 
