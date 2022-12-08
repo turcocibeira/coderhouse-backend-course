@@ -101,8 +101,6 @@ class PersistanceHandler {
                 fileParse[index][key] = body[key]
             };
 
-            console.log(fileParse)
-
             await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(fileParse,null,2))
             return {msg: `Item with ID ${idInt} has been updated successfully.`};
         }
