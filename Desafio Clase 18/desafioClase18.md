@@ -105,6 +105,8 @@ db.createUser({
 
 mongosh --port 27017 -u pepe -p "asd456" --authenticationDatabase "admin"
 
+use ecommerce
+
 db.productos.find()
 
 db.productos.updateMany({}, {$set: {stock: 30}}, {upsert: 1})
